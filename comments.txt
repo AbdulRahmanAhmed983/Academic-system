@@ -1,0 +1,139 @@
+<?php
+
+namespace App\Http\Controllers\admin;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Http\Requests\VendorRequest;
+use App\Models\Vendor;
+use App\Models\Main_category;
+use DB;
+use Illuminate\Support\Str;
+class VendorsController extends Controller
+{  
+    public function index(){
+
+       $vendors = Vendor::selection()->paginate(PAGINATION_COUNT);
+       return view('admin.vendors.index',compact('vendors'));
+    }
+
+    public function create(){
+
+       $categories =  Main_category::where('translation_of',0)->active()->get();
+        return view('admin.vendors.create',compact('categories'));
+    }
+
+    public function store(VendorRequest $request){
+
+        try{
+
+            if(!$request->has('active'))
+            $request->request->add(['active' => 0]);
+            else
+            $request->request->add(['active' => 1]); 
+
+            $filePath = "";
+            if ($request->has('logo')) {
+                $filePath = uploadImage('vendors', $request->logo);
+            }
+
+            Vendor::create([
+                
+                'name' =>  $request -> name ,
+                'email' =>  $request -> email ,
+                'password' => $request->password,
+                'mobile' =>  $request -> mobile ,
+                'active' =>  $request -> active ,
+                'address' =>  $request -> address,
+                'logo' =>  $filePath,
+                'category_id' => $request -> category_id,
+            ]);
+
+            return redirect()->route('admin.vendors')->with(['success' => 'done saved']);
+
+        }catch(\Exception $ex){
+
+            return redirect()->route('admin.vendors')->with(['error' => 'Please try again ']);
+
+        }
+    }
+
+
+
+
+        public function edit($id){
+           try{
+
+                $vendor = Vendor::selection()->find($id);
+                if(!$vendor)
+                return redirect()->route('admin.vendors')->with(['error' => 'هذا المتجر غير موجود او ربما يكون محذوفا ']);
+                 $categories =  Main_category::where('translation_of',0)->active()->get();
+
+                return view('admin.vendors.edit', compact('vendor', 'categories'));
+
+           }catch(\Exception $ex){
+            return redirect()->route('admin.vendors')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+
+           }
+        }
+
+
+    public function update($id,VendorRequest $request){
+        try{
+         $vendor =  Vendor::selection()->find($id);
+            if(!$vendor)
+            return redirect()->route('admin.vendors')->with(['error' => 'please Try Again']);
+
+            DB::beginTransaction();
+            //logo
+            
+            if($request->has('logo')){
+                $filePath = uploadImage('vendors', $request->logo);
+
+                Vendor::where('id',$id)->update([
+                    'logo' =>  $filePath,
+                ]);
+            }
+            
+            if (!$request->has('active'))
+            $request->request->add(['active' => 0]);
+             else
+            $request->request->add(['active' => 1]);
+
+
+            //password
+            $data = $request->except('_token','logo','id','password');
+            if($request->has('password') && !is_null($request->password)){
+                $data['password']  = $request->password;
+            }
+            
+            Vendor::where('id',$id)->update($data);
+            DB::commit();
+            return redirect()->route('admin.vendors')->with(['success' => 'done updated']);
+
+        }catch(\Exception $ex){
+            DB::rollback();
+               // return $ex;
+            return redirect()->route('admin.vendors')->with(['error' => 'Please try again ']);
+
+        }
+        
+    }
+
+        public function delete($id){
+            try {
+            $vendors = Vendor::find($id);
+            if (!$vendors)
+                return redirect()->route('admin.vendors')->with(['error' => 'هذا القسم غير موجود ']);
+
+                // $image = Str::after($vendors->logo, 'assets/');
+                // $image = base_path('assets/' . $image);
+                // unlink($image); //delete from folder
+
+                $vendors->delete();
+                return redirect()->route('admin.vendors')->with(['success' => 'تم حذف القسم بنجاح']);
+            }catch(\Exception $ex){
+                return redirect()->route('admin.vendors')->with(['error' => 'حدث خطا ما برجاء المحاوله لاحقا']);
+            }
+        }
+}

@@ -1,0 +1,405 @@
+div.col-2,
+div.col-sm-2{
+    padding-right: 0px;
+}
+.form-group ,.form-control{text-align: right;}
+.card-title,.card-text{padding-bottom: 20px;}
+body {
+    margin: 0px;
+}
+
+.header-div {
+    text-align: center;
+    padding: 10px;
+}
+.description{padding-bottom: 10px;}
+.header-div img {
+    width: 300px;
+}
+
+.header-container {
+    background-color: #f5f5ef;
+}
+
+.add-row {
+    margin-top: 15px;
+    margin-right: 15px;
+    width: -webkit-fill-available;
+}
+
+.add-row a {
+    float: right;
+}
+
+.col-12 {
+    margin-bottom: 25px;
+}
+
+.foot {
+    background: rgb(245, 245, 239);
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1d3377!important;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+}
+
+.foot a {
+    text-decoration: none;
+}
+/* data table */
+#table thead tr th:last-child{display: inline-table!important;}
+
+#table {
+    border-bottom: 0px;
+    direction: rtl;
+    text-align: -webkit-right;
+}
+
+#table_filter input {
+    outline-offset: 0px;
+    margin-right: 15px!important;
+    width: 250px!important;
+}
+
+#table_filter {
+    direction: rtl;
+}
+
+.dataTables_length select {
+    width: 100px!important;
+    margin-right: 15px!important;
+}
+.buttons a
+{
+   display: inline-block;
+   width: 100%;       /* set to 100% */
+   height: 100%;      /* set to 100% */
+   margin-bottom: 0.5em;
+   padding-top: .6em;
+   padding-bottom: .6em;
+   color: #fff;
+   border-radius: 5px;
+   clear:right;
+   float:right;
+}
+.edit,
+.print {
+    font-size: 15px!important;
+}
+
+/* .print {
+    margin-right: 7px!important;
+} */
+/* add std */
+
+.click,
+.click-info,
+.click-address {
+    font-size: 1.5rem;
+    margin-top: 25px;
+    padding: 10px;
+    color: #0f8300;
+    font-weight: bold;
+}
+
+.click:hover,
+.click-info:hover,
+.click-address:hover {
+    color: #0f8300;
+}
+
+.toogle_personal,
+.others,
+.toogle_info,
+.toogle_add {
+    border: 1px solid #d5d5cf;
+    padding: 25px 15px;
+    border-radius: 10px;
+    direction: rtl;
+    background: rgb(245, 245, 239);
+}
+
+form label {
+    text-align: -webkit-right;
+}
+
+.form-container {
+    margin-bottom: 20px;
+}
+
+.img-input {
+    padding: 4px;
+}
+
+.require {
+    font-size: 20px;
+    color: red;
+}
+
+.others {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.btn-reg {
+    text-align: center;
+}
+
+.btn-reg button {
+    font-size: 18px;
+    padding: 6px 40px;
+}
+
+.form-check-input {
+    margin-top: 0.9rem;
+}
+
+.birth-place {
+    display: none;
+}
+
+.seperate-line {
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.other-data {
+    max-height: 100px;
+    max-width: 1000px;
+}
+
+.table-btn {
+    justify-content: right;
+    margin-top: 22px;
+}
+
+.std-table {
+    padding: 6px 25px;
+}
+.tb-page{
+    padding-right: 15px;
+    padding-left: 15px;
+    max-width:calc(100% - 10vw*2);
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.Profile{
+    background-color: #1a1f2469;
+    height: 200px;
+    width: 985px;
+    border-radius: 5px;
+}
+
+
+.profilePicBox{
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: 50%;
+    left: 11%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    overflow: hidden;
+
+}
+.imgprof{
+    width: 100%;
+    height: 100%;
+}
+.containInfo{
+    background-color: #1a1f2469;
+    height: 100%;
+
+}
+
+#file{
+    display: none;
+}
+.infoProf{
+    padding-left: 20%;
+    padding-top: 7%;
+}
+
+.input-grouprofil{
+    margin-top: 15px;
+    margin-bottom: 18px;
+
+}
+.input-grouprofil .form-control-profile{
+    box-shadow: none;
+    background: transparent !important;
+    padding: 10px;
+    color: white;
+    font-size: 13px;
+    width:100%;
+    outline-style: auto;
+
+}
+.input-grouprofil .form-control-profile::placeholder{
+    font-size: 13px;
+}
+
+
+
+
+  .login100-form-title {
+    width: 500px;
+    height: 250px;
+    border-radius: 10px;
+    margin: -48px 0 45px -15px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 70px 15px 74px 15px;
+    opacity: 0.8;
+  }
+  .EnterEmail{
+    background-color: #1a1f24;
+    height: 300px;
+    width: 480px;
+    border-radius: 10px;
+  }
+  hr {
+    border-top: 0.5px solid rgb(151, 149, 149);
+  }
+.percent-span{
+    font-size: 20px;
+    text-align: center;
+}
+
+
+  :root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --varyDarkBlue: hsl(234, 12%, 34%);
+    --grayishBlue: hsl(229, 6%, 66%);
+    --veryLightGray: hsl(0, 0%, 98%);
+    --weight1: 200;
+    --weight2: 400;
+    --weight3: 600;
+}
+
+body {
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--veryLightGray);
+}
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+h1:first-of-type {
+    font-weight: var(--weight1);
+    color: var(--varyDarkBlue);
+
+}
+
+h1:last-of-type {
+    color: var(--varyDarkBlue);
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+.header {
+    text-align: center;
+    line-height: 0.8;
+    margin-bottom: 50px;
+    margin-top: 100px;
+}
+
+.header p {
+    margin: 0 auto;
+    line-height: 2;
+    color: var(--grayishBlue);
+}
+
+
+.box p {
+    color: var(--grayishBlue);
+}
+
+.box {
+    border-radius: 5px;
+    box-shadow: 0px 30px 40px -20px var(--grayishBlue);
+    padding: 30px;
+    margin: 20px;  
+}
+
+
+@media (max-width: 450px) {
+    .box {
+        height: 200px;
+    }
+}
+
+@media (max-width: 950px) and (min-width: 450px) {
+    .box {
+        text-align: center;
+        height: 180px;
+    }
+}
+
+.cyan {
+    border-top: 3px solid var(--cyan);
+}
+.red {
+    border-top: 3px solid var(--red);
+}
+.blue {
+    border-top: 3px solid var(--blue);
+}
+.orange {
+    border-top: 3px solid var(--orange);
+}
+
+h2 {
+    color: var(--varyDarkBlue);
+    font-weight: var(--weight3);
+}
+
+
+@media (min-width: 950px) {
+    .row1-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .row2-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box-down {
+        position: relative;
+        top: 150px;
+    }
+    .box {
+        width: 20%;
+     
+    }
+    .header p {
+        width: 30%;
+    }
+    
+}
